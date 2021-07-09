@@ -38,7 +38,7 @@ agent_cls = {
 
 fabric_image_version = {
     'v1.1': '1.1.0',
-    'v1.4': '1.4.2'
+    'v1.4': '1.4'
 }
 # CELLO_MASTER_FABRIC_DIR is mounted by nfs container as '/'
 CELLO_MASTER_FABRIC_DIR = '/opt/fabric/'

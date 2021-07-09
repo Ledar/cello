@@ -46,7 +46,7 @@ install_software() {
 		ubuntu)
 			sudo apt-get update && sudo apt-get install -y curl python-pip tox nfs-common;
 			command -v docker >/dev/null 2>&1 || { echo_r >&2 "No docker-engine found, try installing"; curl -sSL https://get.docker.com/ | sh; sudo service docker restart; }
-			command -v docker-compose >/dev/null 2>&1 || { echo_r >&2 "No docker-compose found, try installing"; sudo pip install 'docker-compose>=1.17.0'; }
+			command -v docker-compose >/dev/null 2>&1 || { echo_r >&2 "No docker-compose found, try installing"; sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose; sudo chmod +x /usr/local/bin/docker-compose; }
 			;;
 		linuxmint)
 			sudo apt-get install apt-transport-https ca-certificates -y
@@ -112,8 +112,8 @@ if [ `sudo docker ps -qa|wc -l` -gt 0 ]; then
 	docker ps -a
 fi
 
-echo_b "Download required Docker images for Cello Services..."
-bash ./download_images.sh
+# echo_b "Download required Docker images for Cello Services..."
+# bash ./download_images.sh
 
 echo_b "Checking local mounted database path ${DB_DIR}..."
 [ ! -d ${DB_DIR} ] \

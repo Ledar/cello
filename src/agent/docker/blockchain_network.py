@@ -22,7 +22,7 @@ CELLO_MASTER_FABRIC_DIR = '/opt/fabric/'
 
 couchdb_image_version = {
     '1.1.0': '2.1.1',
-    '1.4.2': '2.1.1',
+    '1.4': '2.3.1',
 }
 
 # fabric-ca container variables
@@ -40,7 +40,7 @@ FABRIC_PEER_IMAGE_PREFIX = 'hyperledger/fabric-peer:'
 PEER_START_COMMAND = 'peer node start'
 
 #couchdb container variables
-FABRIC_COUCHDB_IMAGE_PREFIX = 'hyperledger/fabric-couchdb:'
+FABRIC_COUCHDB_IMAGE_PREFIX = 'couchdb:'
 
 #zookeeper container variables
 FABRIC_ZOOKEEPER_IMAGE_PREFIX = 'hyperledger/fabric-zookeeper:'
