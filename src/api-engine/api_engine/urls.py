@@ -39,8 +39,8 @@ from api.routes.general.views import RegisterViewSet, LoginViewSet, login
 DEBUG = getattr(settings, "DEBUG")
 API_VERSION = os.getenv("API_VERSION")
 WEBROOT = os.getenv("WEBROOT")
-#WEBROOT = "/".join(WEBROOT.split("/")[1:]) + "/"
-WEBROOT = "api/v1/"
+WEBROOT = "/".join(WEBROOT.split("/")[1:]) + "/v1/"
+# WEBROOT = "api/v1/"
 
 swagger_info = openapi.Info(
     title="Cello API Engine Service",
